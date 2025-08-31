@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Analysis Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Medical Analysis Assistant</h1>
+      <p class="subtitle">ECG • X-ray • Radiology • Labs — AI-powered insights (not a diagnosis)</p>
+    </header>
+
+    <section class="card">
+      <form id="analyze-form">
+        <div class="form-row">
+          <label for="location">Your location (city / region):</label>
+          <input type="text" id="location" name="location" placeholder="e.g., Pune, Maharashtra" />
+        </div>
+
+        <div class="form-row">
+          <label for="question">Your question / symptoms / context:</label>
+          <textarea id="question" name="question" rows="4" placeholder="Describe your concern or paste report text..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="reports">Upload report images (ECG, X-ray, PDF screenshots, lab images):</label>
+          <input type="file" id="reports" name="reports" accept="image/*" multiple />
+          <small>Supported: PNG, JPG, JPEG, GIF, BMP, WEBP. For PDFs, provide screenshots.</small>
+        </div>
+
+        <div class="form-row">
+          <label class="inline">
+            <input type="checkbox" id="compare" name="compare" /> Compare two images (first two selected as A and B)
+          </label>
+          <small>If enabled, select at least two images. The assistant will highlight differences between Image A and Image B.</small>
+        </div>
+
+        <div id="preview" class="preview"></div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Analyze</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden">
+      <h2>Analysis</h2>
+      <div id="output" class="output"></div>
+      <p id="disclaimer" class="disclaimer"></p>
+    </section>
+
+    <section id="error" class="card error hidden"></section>
+
+    <footer>
+      <small>
+        Important: This tool is for information only and not a medical diagnosis. Seek professional care for urgent issues.
+      </small>
+    </footer>
+  </div>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ecg-xray-analyzer
+    env: node
+    buildCommand: |
+      npm ci
+      npm run build
+    startCommand: node server.cjs
+    autoDeploy: true
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_BASE_URL
+        value: https://openrouter.ai/api/v1

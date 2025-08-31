@@ -1,0 +1,49 @@
+# Node
+node_modules/
+client/node_modules/
+
+# Next.js
+.client
+.next/
+client/.next/
+out/
+.vercel/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Env
+.env
+.env.*
+.env.local
+client/.env.local
+
+# Builds / Coverage
+build/
+dist/
+coverage/
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Python virtual envs
+.venv/
+venv/
+
+# OneDrive temp artifacts
+~$*
+*.tmp
+$RECYCLE.BIN/
+
+# Misc
+*.swp
+*.swo
